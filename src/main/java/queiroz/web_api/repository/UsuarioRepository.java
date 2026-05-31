@@ -13,7 +13,7 @@ public class UsuarioRepository {
             System.out.println("Save - Recebendo usuário na camada de repository");
         }
         else {
-            System.out.println("Save - Recebendo usuário na camada de repository");
+            System.out.println("Update - Recebendo usuário na camada de repository");
         }
 
         System.out.println(usuario);
