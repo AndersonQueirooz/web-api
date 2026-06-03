@@ -1,6 +1,7 @@
 package queiroz.web_api.repository;
 
 import org.springframework.stereotype.Repository;
+import queiroz.web_api.handler.BusinessException;
 import queiroz.web_api.model.Usuario;
 
 import java.util.ArrayList;
@@ -9,6 +10,9 @@ import java.util.List;
 @Repository
 public class UsuarioRepository {
     public void save(Usuario usuario){
+        if (usuario.getLogin()==null){
+            throw new BusinessException("O Campo login é obrigatório");
+        }
         if(usuario.getId()==null) {
             System.out.println("Save - Recebendo usuário na camada de repository");
         }
